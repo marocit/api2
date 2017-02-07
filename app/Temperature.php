@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Clima extends Model
+class Temperature extends Model
 {
-     protected $fillable = [
+    protected $fillable = [
         'temp_innen','temp_aussen','humidity', 'user_id',
     ];
 

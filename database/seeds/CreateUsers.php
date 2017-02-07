@@ -11,7 +11,7 @@ class CreateUsers extends Seeder
      */
     public function run()
     {
-           $faker = Faker\Factory::create();
+           $faker = Faker\Factory::create('de_DE');
 
         $limit = 33;
 
