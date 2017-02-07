@@ -23,5 +23,6 @@ Route::group(['prefix' => 'api', 'middleware' => 'auth:api'], function(){
 
     Route::resource('note', 'NoteController');
     Route::resource('temp', 'TempController');
+    Route::resource('clima', 'ClimaController');
 
 });

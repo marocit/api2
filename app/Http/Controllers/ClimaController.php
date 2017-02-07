@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Auth;
-use App\Temp;
 
-class TempController extends Controller
+use Auth;
+use App\Clima;
+
+class ClimaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +16,9 @@ class TempController extends Controller
      */
     public function index()
     {
-        $temp = Temp::all();
+        $clima = Clima::all();
 
-        return response()->json($temp);
+        return response()->json($clima);
     }
 
     /**
@@ -42,7 +43,7 @@ class TempController extends Controller
 
         $temp['user_id']= Auth::guard('api')->id();
 
-        return Temp::create($temp); //test dwdkwdkkokfffweeffw
+        return Clima::create($temp); 
     }
 
     /**
@@ -54,7 +55,7 @@ class TempController extends Controller
     public function show($id)
     {
         return response()->json(
-            Temp::where('id', $id)
+            Clima::where('id', $id)
             ->where('user_id', Auth::guard('api')->id())
             ->first()
         );
